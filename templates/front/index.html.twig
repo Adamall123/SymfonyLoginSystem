@@ -1,5 +1,20 @@
+
 {% extends 'base.html.twig' %}
 
-{% block body %}
-Starting REST API challenge
-{% endblock %}
+{% block main %}
+<h1 class="text-info mb-5 mt-4">Zarządzanie użytkownikami</h1>
+
+<div class="embed-responsive ">
+    <p>REST API umożliwiające</p>
+    <ul class="list-unstyled text-small">
+        <li>rejestrację nowego użytkownika</li>
+        <li>edycję danych profilowych</li>
+        <li>logowanie użytkownika oraz administratora</li>
+        <li>edycję użytkowników przez administratora</li>
+    </ul>
+</div>
+ <a class="btn btn-outline-primary mr-2" href="{{path('register')}}">Sign up</a>
+      <a class="btn btn-outline-primary" href="{{path('login')}}">Log in</a>
+{% endblock  %}
+
+
