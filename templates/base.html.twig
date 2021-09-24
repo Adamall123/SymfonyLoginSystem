@@ -16,7 +16,8 @@
     </style>
 
     <link rel="stylesheet" href="{{asset('assets/css/fontawesome.min.css')}}">
-
+    {% block stylesheets %}
+    {% endblock %}
     <title>Symfony 4 app - REST API users</title>
 
 </head>
@@ -33,9 +34,7 @@
         {% endblock %}
         {% block main %}
         {% endblock  %}
-         {% block footer_links %}
-        
-         
+         {% block customjavascript %}
         {% endblock  %}
     </div>
 <!-- Optional JavaScript -->
