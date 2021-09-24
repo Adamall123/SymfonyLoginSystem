@@ -15,15 +15,15 @@
             </tr>
         </thead>
         <tbody>
-       
+        {% for i in 1..10 %}
             <tr>
-            <td><?=$v?></td>
+            <td>{{i}}</td>
             <td>Adam</td>
             <td>Wojdyło</td>
             <td>adam.wojdylo1234@gmail.com</td>
-            <td><a href="#" onclick="return confirm('Are you sure?');"><i class="fas fa-trash"></i></a></td>
+            <td><a href="#" onclick="return confirm('Czy jesteś pewny(a)?');"><i class="fas fa-trash"></i></a></td>
             </tr>
-        
+        {% endfor %}
         </tbody>
         </table>
     </div>
