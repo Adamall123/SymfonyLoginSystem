@@ -83,7 +83,24 @@ class AdminController extends AbstractController
      */
     public function users(): Response
     {
-        return $this->render('admin/users.html.twig');
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $users = $repository->findBy([], ['name'=>'ASC']);
+        return $this->render('admin/users.html.twig',[
+            'users'=>$users
+        ]);
     }
 
+      /**
+     * @Route("/su/delete-user/{user}", name="delete_user")
+     */
+    public function deleteUser(User $user): Response
+    {
+       $manager = $this->getDoctrine()->getManager();
+
+       $manager->remove($user);
+
+       $manager->flush();
+
+       return $this->redirectToRoute('users');
+    }
 }
