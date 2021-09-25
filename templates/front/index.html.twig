@@ -13,8 +13,10 @@
         <li>edycję użytkowników przez administratora</li>
     </ul>
 </div>
+{% if not app.user %}
  <a class="btn btn-outline-primary mr-2" href="{{path('register')}}">Sign up</a>
       <a class="btn btn-outline-primary" href="{{path('login')}}">Log in</a>
+      {% endif %}
 {% endblock  %}
 
 
