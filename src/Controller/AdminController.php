@@ -21,7 +21,7 @@ class AdminController extends AbstractController
     }
 
       /**
-     * @Route("/users", name="users")
+     * @Route("/su/users", name="users")
      */
     public function users(): Response
     {
