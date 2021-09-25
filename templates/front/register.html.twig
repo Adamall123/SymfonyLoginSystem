@@ -4,51 +4,57 @@
 <div class="row mt-5">
     <div class="col-md-8 order-md-1">
         <h4 class="mb-3">Rejestracja nowego użytkownika</h4>
-        <form method="POST" action="#" class="needs-validation" novalidate>
+        {#<form method="POST" action="#" class="needs-validation" novalidate>
+        #}
+        {{ form_start(form,{'attr': {'novalidate':'novalidate',
+        'class':'needs-validation'}}) }}
             <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="firstName">Imię:</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <div class="col-md-12 mb-3">
+                    <label for="user_name">Imię:</label>
+                    {# <input type="text" class="form-control" id="firstName" placeholder="" value="" required> #}
+                    
+                    {{ form_widget(form.name, { 'attr': {'class': 'form-control'} }) }}
                     <div class="invalid-feedback">
-                        Valid first name is required.
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="lastName">Nazwisko:</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                    <div class="invalid-feedback">
-                        Valid last name is required.
+                        Pole imię jest wymagane.
+                        {{form_errors(form.name)}} 
                     </div>
                 </div>
             </div>
 
             <div class="mb-3">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                <label for="user_email">Email</label>
+                {# <input type="email" class="form-control" id="email" placeholder="you@example.com" required> #}
+                 {{ form_widget(form.email, { 'attr': {'class': 'form-control'} }) }}
                 <div class="invalid-feedback">
-                    Please enter a valid email address for shipping updates.
+                    Proszę o wpisanie poprawnego adresu e-mail.
+                     {{ form_errors(form.email) }}
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="password">Hasło</label>
-                <input type="password" class="form-control" id="password" required>
+                {# <input type="user_password_first" class="form-control" id="password" required> #}
+                 {{ form_widget(form.password.first, { 'attr': {'class': 'form-control'} }) }}
                 <div class="invalid-feedback">
-                    Please enter a valid password (min 6 characters).
+                    Proszę o wpisaniu poprawnego hasła (min 6 znaków).
+                    {{ form_errors(form.password.first) }}
                 </div>
             </div>
 
             <div class="mb-3">
-                <label for="confirm_password">Powtórz hasło</label>
-                <input type="password" class="form-control" id="confirm_password" required>
+                <label for="user_password_second">Powtórz hasło</label>
+                {# <input type="password" class="form-control" id="confirm_password" required> #}
+                 {{ form_widget(form.password.second, { 'attr': {'class': 'form-control'} }) }}
                 <div class="invalid-feedback">
-                    Please enter a valid password confirmation (min 6 characters).
+                    Proszę o wpisanie tego samego hasła co wyżej (min 6 znaków).
+                    {{ form_widget(form.password.second) }}
                 </div>
             </div>
 
             <hr class="mb-4">
-            <a href="admin/index.php" class="btn btn-primary btn-lg btn-block" role="button">Register</a>
-        </form>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Zarejestruj się</button>
+            {# <a href="admin/index.php" class="btn btn-primary btn-lg btn-block" role="button">Zarejestruj się</a> #}
+        {{ form_end(form) }}
 
     </div>
 </div>
@@ -76,11 +82,11 @@
     })();
 
 
-    var password = document.getElementById("password"), confirm_password = document.getElementById("confirm_password");
+    var password = document.getElementById("user_password_first"), confirm_password = document.getElementById("user_password_second");
 
     function validatePassword() {
         if (password.value != confirm_password.value) {
-            confirm_password.setCustomValidity("Passwords Don't Match");
+            confirm_password.setCustomValidity("Hasła się nie zgadzają.");
         } else {
             confirm_password.setCustomValidity('');
         }
