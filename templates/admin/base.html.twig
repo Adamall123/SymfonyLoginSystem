@@ -11,9 +11,9 @@
         <h5 class="my-0 mr-md-auto font-weight-normal">Awesome Videos</h5>
         <a class="nav-link active" href="{{path('front')}}"> Wróć do strony głównej</a>      
         <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark">Zalogowany jako Adam Wojdyło</a>
+            <a class="p-2 text-dark">Zalogowany jako {{ app.user.name }}</a>
         </nav>
-        <a class="btn btn-outline-primary" href="{{path('front')}}">Wyloguj się</a>
+        <a class="btn btn-outline-primary" href="{{path('logout')}}">Wyloguj się</a>
     </div>
 
         <div class="row">
@@ -26,12 +26,14 @@
                                 Mój profil
                             </a>
                         </li>
+                        {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{path('users')}}">
                                 <span data-feather="users"></span>
                                 Użytkownicy
                             </a>
                         </li>
+                        {% endif %}
                     </ul>
                     
                 </div>
