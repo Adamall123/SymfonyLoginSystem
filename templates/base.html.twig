@@ -23,6 +23,12 @@
 </head>
 
 <body class="text-center">
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{asset('assets/js/jquery.js')}}"></script>
+<script src="{{asset('assets/js/popper.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.js')}}"></script>
+
     <div class="container-fluid">
         {% block menu %}
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
@@ -43,11 +49,7 @@
          {% block customjavascript %}
         {% endblock  %}
     </div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="{{asset('assets/js/jquery.js')}}"></script>
-<script src="{{asset('assets/js/popper.js')}}"></script>
-<script src="{{asset('assets/js/bootstrap.js')}}"></script>
+
 
 <script>
     $(function () {
