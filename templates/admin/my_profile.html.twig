@@ -1,7 +1,7 @@
 {% extends 'admin/base.html.twig' %}
 
 {% block mainadmin %}
-<h2>Mój profil<small><a onclick="return confirm('Czy jesteś pewny?');" href="#"> usuń konto</a></small></h2>
+<h2>Mój profil<small><a onclick="return confirm('Czy jesteś pewny?');" href="{{ path('delete_account') }}"> usuń konto</a></small></h2>
 
 
 
