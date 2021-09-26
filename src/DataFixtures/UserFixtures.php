@@ -32,9 +32,9 @@ class UserFixtures extends Fixture
     private function getUserData(): array 
     {
         return [
-            ["Adam", "adam.wojdylo1234@gmail.com", "learning123", ['ROLE_ADMIN']],
-            ["Kamil", "kamil.stoch@gmail.com", "skoki250", ['ROLE_USER']],
-            ["Heynen", "heynen.siatkowka@PZPN.pl", "worekmedali", ['ROLE_USER']]
+            ["Master Company", "admin@kambu.pl", "kambu", ['ROLE_ADMIN']],
+            ["Adam", "adad.wojdylo@gmail.com", "nauka1123", ['ROLE_USER']],
+            ["Heynen", "test.siatkowka@PZPN.pl", "worekmedali", ['ROLE_USER']]
         ];
     }
 }
